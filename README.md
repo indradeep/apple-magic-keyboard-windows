@@ -9,3 +9,8 @@
 6. You're all set!
 
 ## Mapping Apple Keyboard for Windows
+
+
+#References
+https://github.com/aaronhoffman/utils/tree/master/AutoHotKey
+Auto Hotkey Key List: https://autohotkey.com/docs/KeyList.htm
