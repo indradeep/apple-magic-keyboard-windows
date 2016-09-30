@@ -1,9 +1,9 @@
 ;=========================================
-; Magic Keyboard Auto Hotkey Mapping : https://github.com/indradeep/apple-magic-keyboard-windows
+; Magic Keyboard Auto Hotkey Mapping
 ;=========================================
 ; NOTES
 ; ! = ALT
-; ^ = CTRL
+; ^ = Ctrl
 ; + = SHIFT
 ; # = WIN
 ; < = LEFT Modifier
@@ -28,8 +28,8 @@ SendMode Input
 
 ; Windows Delete Key
 >!Backspace::SendInput {Delete}
->#Backspace::SendInput {Insert}
-
+#Backspace::SendInput {Delete}
+>!Enter::SendInput {Insert}
 ; --------------------------------------------------------------
 ; media/function keys all mapped to the right option key
 ; --------------------------------------------------------------
@@ -43,48 +43,60 @@ SendMode Input
 
 
 ; --------------------------------------------------------------
-; OS X system shortcuts
+; OS X system shortcuts (SendInput command is used for extended compatiblity)
 ; --------------------------------------------------------------
 
 ; Make Ctrl + S work with cmd (windows) key
-#s::^s
+#s::SendInput {Ctrl down}{s}{Ctrl up}
 
 ; Selecting
-#a::^a
+#a::SendInput {Ctrl down}{a}{Ctrl up}
 
 ; Copying
-#c::^c
+;#c::^c
+#c::SendInput {Ctrl down}{c}{Ctrl up}
 
 ; Pasting
-#v::^v
+#v::SendInput {Ctrl down}{v}{Ctrl up}
 
 ; Cutting
-#x::^x
+#x::SendInput {Ctrl down}{x}{Ctrl up}
 
 ; Opening
-#o::^o
+#o::SendInput {Ctrl down}{o}{Ctrl up}
 
 ; Finding
-#f::Send ^f
+#f::SendInput {Ctrl down}{f}{Ctrl up}
 
 ; Undo
-#z::^z
+#z::SendInput {Ctrl down}{z}{Ctrl up}
 
 ; Redo
-#y::^y
+#y::SendInput {Ctrl down}{y}{Ctrl up}
 
 ; New tab
-#t::^t
+#t::SendInput {Ctrl down}{t}{Ctrl up}
 
 ; close tab
-#w::^w
+#w::SendInput {Ctrl down}{w}{Ctrl up}
 
 ; Close windows (cmd + q to Alt + F4)
-#q::Send !{F4}
-
-
-; minimize windows
-#m::WinMinimize,a
+#q::SendInput {Alt down}{F4}{Alt up}
 
 ; Refresh in chrome
-#r::^r
+#r::SendInput {Ctrl down}{r}{Ctrl up}
+
+; New
+#n::SendInput {Ctrl down}{n}{Ctrl up}
+
+; New Window in Chrome
+#+n::SendInput {Ctrl down}{Shift down{n}{Shift up}{Ctrl up}
+
+; Bold
+#b::SendInput {Ctrl down}{b}{Ctrl up}
+
+; Italic
+#i::SendInput {Ctrl down}{i}{Ctrl up}
+
+; Control + Enter is be mapped to Command + Enter
+#Enter::SendInput {Ctrl down}{Enter}{Ctrl up}
